@@ -1,10 +1,17 @@
 import {createStackNavigator} from 'react-navigation-stack';
-import {createAppContainer} from 'react-navigation';
 import Homescreen from '../Home/Homescreen.js';
 import Addscreen from '../Add/Addscreen.js';
 import Editscreen from '../Edit/Editscreen.js';
+import DetailScreen from '../Detail/DetailScreen';
+import LoginScreen from '../Login/Loginscreen';
 
-const RootStack = createStackNavigator(
+export const LoginStack = createStackNavigator({
+  Login: {
+    screen: LoginScreen,
+  },
+});
+
+export const RootStack = createStackNavigator(
   {
     Home: {
       screen: Homescreen,
@@ -14,6 +21,9 @@ const RootStack = createStackNavigator(
     },
     Edit: {
       screen: Editscreen,
+    },
+    Detail: {
+      screen: DetailScreen,
     },
   },
   {
@@ -29,5 +39,3 @@ const RootStack = createStackNavigator(
     },
   },
 );
-
-export default createAppContainer(RootStack);
